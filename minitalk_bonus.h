@@ -1,15 +1,17 @@
-#ifndef MINITALK_H
-# define MINITALK_H
+#ifndef MINITALK_BONUS_H
+# define MINITALK_BONUS_H
 
 #include <signal.h>
 #include <unistd.h>
 #include <stdlib.h>
 
 // ------- server_bonus.c -------
-void signal_take(int signal);
+void send(int pid, int chr);
+void message_sent(int signal);
 
 // ------- client_bonus.c -------
-void send(int pid, int chr);
+void signal_take(int sig, siginfo_t *info, void *ucontext);
+void set_signal_action(void);
 
 // ------- minitalk_utils.c -------
 void ft_itoa(int num);
