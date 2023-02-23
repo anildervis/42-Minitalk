@@ -1,14 +1,5 @@
 #include "minitalk.h"
 
-void ft_itoa(int num)
-{
-    char rt;
-    if (num >= 10)
-        ft_itoa(num / 10);
-    rt = num % 10 + '0';
-    write(1, &rt, 1);
-}
-
 void signal_take(int signal)
 {
     static int bit = 7;

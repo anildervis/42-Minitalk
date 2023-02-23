@@ -1,21 +1,5 @@
 #include "minitalk.h"
 
-int ft_atoi(char *str)
-{
-    int num;
-
-    num = 0;
-    while (*str)
-    {
-        if (*str >= '0' && *str <= '9')
-            num = num * 10 + *str - '0';
-        else
-            exit(1); // + error message
-        str++;
-    }
-    return (num);
-}
-
 void send(int pid, int chr)
 {
     // int i;
